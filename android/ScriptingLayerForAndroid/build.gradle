@@ -27,15 +27,17 @@ dependencies {
     compile project(':USBHostSerialFacade')
     compile project(':ScriptingLayer')
     compile project(':InterpreterForAndroid')
-    compile 'com.android.support:appcompat-v7:23.1.1'
-    compile 'com.android.support:recyclerview-v7:23.1.1'
+    //compile 'com.android.support:appcompat-v7:23.1.1'
+    //compile 'com.android.support:recyclerview-v7:23.1.1'
+    compile 'com.android.support:appcompat-v7:22.2.1'
+    compile 'com.android.support:recyclerview-v7:22.2.1'
     compile files('libs/locale_platform.jar')
     //compile 'com.squareup.picasso:picasso:2.5.2'
 }
 
 android {
     buildToolsVersion "23.0.2"
-    compileSdkVersion 23
+    compileSdkVersion 22
 
     sourceSets {
         main {
@@ -54,7 +56,7 @@ android {
     }
     defaultConfig {
         minSdkVersion 15
-        targetSdkVersion 23
+        targetSdkVersion 22
         versionCode 611
         versionName '6.1.1'
     }
