@@ -15,12 +15,14 @@ Please report bugs and feature requests on the [issues list](../../issues).
 
 You can download the current APK by scanning or clicking the following barcode:
 
-##Disclaimer
+# API 23 Caveat
 
-  * Even though a lot of contributors are working for Google, this is not an
-    official Google product.
-  * SL4A is no longer under active development. However, some forks of this
-    project may be.
+From API 23, the way in which Android handles permissions [changed](https://developer.android.com/about/versions/marshmallow/android-6.0-changes.html#behavior-runtime-permissions) and now
+they are handled in runtime. This causes SL4A to crash when it executes on a device
+running Android Marshmallow (and newer versions).
+
+There's a simple workaround to prevent the application to crash: enabling the
+permissions manually in the App Info screen.
 
 ##Documentation
 
@@ -241,7 +243,7 @@ folder.
 * If there are still issues, look at this to find tidbits you could possibly do:
 http://jokar-johnk.blogspot.co.nz/2011/02/how-to-make-android-app-with-sl4a.html
 
-Launguages
+Languages
 ===
 Languages are shipped with Android application.
 

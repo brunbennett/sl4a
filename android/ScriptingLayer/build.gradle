@@ -1,6 +1,6 @@
 buildscript {
     repositories {
-        mavenCentral()
+        jcenter()
     }
 
     dependencies {
@@ -19,19 +19,23 @@ dependencies {
     compile project(':WebCamFacade')
     compile project(':USBHostSerialFacade')
     compile project(':InterpreterForAndroid')
-    compile('com.android.support:support-v4:21.0.3'){
-        force = true
-    }
+    //compile 'com.android.support:appcompat-v7:23.1.1'
+    compile 'com.android.support:appcompat-v7:22.2.1'
 }
 
 android {
-    buildToolsVersion "22.0.1"
+    buildToolsVersion "23.0.2"
     compileSdkVersion 22
 
     defaultConfig {
         minSdkVersion 15
         targetSdkVersion 22
     }
+
+/*    dexOptions {
+        javaMaxHeapSize "4g"
+        preDexLibraries = false
+    }*/
 
     sourceSets {
         main {
