@@ -15,15 +15,6 @@ Please report bugs and feature requests on the [issues list](../../issues).
 
 You can download the current APK by scanning or clicking the following barcode:
 
-# API 23 Caveat
-
-From API 23, the way in which Android handles permissions [changed](https://developer.android.com/about/versions/marshmallow/android-6.0-changes.html#behavior-runtime-permissions) and now
-they are handled in runtime. This causes SL4A to crash when it executes on a device
-running Android Marshmallow (and newer versions).
-
-There's a simple workaround to prevent the application to crash: enabling the
-permissions manually in the App Info screen.
-
 ##Documentation
 
 The original Google Code wiki has been converted to Markdown and
