@@ -16,13 +16,19 @@
 
 package com.googlecode.android_scripting.activity;
 
-import android.app.ListActivity;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
 import android.view.LayoutInflater;
@@ -32,14 +38,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.googlecode.android_scripting.Constants;
 import com.googlecode.android_scripting.Log;
 import com.googlecode.android_scripting.R;
+import com.googlecode.android_scripting.custom_component.item_lists.ScriptMonitorListAdapter;
 import com.googlecode.android_scripting.interpreter.InterpreterProcess;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -51,7 +58,8 @@ import org.connectbot.ConsoleActivity;
  *
  * @author Alexey Reznichenko (alexey.reznichenko@gmail.com)
  */
-public class ScriptProcessMonitor extends ListActivity {
+public class ScriptProcessMonitor extends AppCompatActivity
+        implements ScriptMonitorListAdapter.ViewHolder.ClickListener {
 
     private final static int UPDATE_INTERVAL_SECS = 1;
 
@@ -59,9 +67,18 @@ public class ScriptProcessMonitor extends ListActivity {
 
     private volatile ScriptingLayerService mService;
 
+    RecyclerView sMonitorListView;
+    RecyclerView.LayoutManager sMonitorListLayoutManager;
+    ScriptMonitorListAdapter sMonitorListAdapter;
+
+    TextView noRunningScriptsMessage;
+
+    Toolbar toolbar;
+    ActionBar mActionBar;
+
     private ScriptListAdapter mUpdater;
-    private List<InterpreterProcess> mProcessList;
-    private ScriptMonitorAdapter mAdapter;
+    private List<InterpreterProcess> mProcessList = new ArrayList<>();
+    //private ScriptMonitorAdapter mAdapter;
     private boolean mIsConnected = false;
 
     private ServiceConnection mConnection = new ServiceConnection() {
@@ -77,8 +94,10 @@ public class ScriptProcessMonitor extends ListActivity {
         public void onServiceDisconnected(ComponentName name) {
             mService = null;
             mIsConnected = false;
-            mProcessList = null;
-            mAdapter.notifyDataSetChanged();
+            mProcessList = new ArrayList<>();
+            //mAdapter.notifyDataSetChanged();
+            sMonitorListAdapter.setmProcessList(mProcessList);
+            sMonitorListAdapter.notifyDataSetChanged();
         }
     };
 
@@ -86,11 +105,33 @@ public class ScriptProcessMonitor extends ListActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bindService(new Intent(this, ScriptingLayerService.class), mConnection, 0);
-        CustomizeWindow.setToolbarTitle(this, "Script Monitor", R.layout.script_monitor);
-        mAdapter = new ScriptMonitorAdapter();
-        setListAdapter(mAdapter);
-        registerForContextMenu(getListView());
-        // Analytics.trackActivity(this);
+
+        setContentView(R.layout.script_monitor);
+
+        // Toolbar.
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        mActionBar = getSupportActionBar();
+        if (mActionBar != null) {
+            mActionBar.setTitle(R.string.toolbar_title_script_monitor);
+            mActionBar.setHomeButtonEnabled(true);
+            mActionBar.setDisplayHomeAsUpEnabled(true);
+        }
+
+        noRunningScriptsMessage = (TextView) findViewById(R.id.script_monitor_list_empty);
+
+        sMonitorListView = (RecyclerView) findViewById(R.id.script_monitor_list);
+        sMonitorListAdapter = new ScriptMonitorListAdapter(mProcessList, this);
+        sMonitorListView.setAdapter(sMonitorListAdapter);
+        sMonitorListLayoutManager = new LinearLayoutManager(this);
+        sMonitorListView.setLayoutManager(sMonitorListLayoutManager);
+
+/*        mAdapter = new ScriptMonitorAdapter();
+        setListAdapter(mAdapter);*/
+
+/*        registerForContextMenu(sMonitorListView);
+         Analytics.trackActivity(this);*/
     }
 
     @Override
@@ -122,20 +163,51 @@ public class ScriptProcessMonitor extends ListActivity {
         unbindService(mConnection);
     }
 
-    @Override
+/*    @Override
     protected void onListItemClick(ListView list, View view, int position, long id) {
         final InterpreterProcess script = (InterpreterProcess) list.getItemAtPosition(position);
+        Intent intent = new Intent(this, ConsoleActivity.class);
+        intent.putExtra(Constants.EXTRA_PROXY_PORT, script.getPort());
+        startActivity(intent);
+    }*/
+
+    @Override
+    public void onListItemClick(int position) {
+        final InterpreterProcess script = mProcessList.get(position);
         Intent intent = new Intent(this, ConsoleActivity.class);
         intent.putExtra(Constants.EXTRA_PROXY_PORT, script.getPort());
         startActivity(intent);
     }
 
     @Override
-    public void onCreateContextMenu(ContextMenu menu, View view, ContextMenuInfo menuInfo) {
-        menu.add(Menu.NONE, 0, Menu.NONE, "Stop");
+    public boolean onItemLongClick(final int position) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        builder.setItems(R.array.context_menu_triggers, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+
+                if (which == 0) {
+                    InterpreterProcess script = mProcessList.get(position);
+
+                    Intent intent = new Intent(ScriptProcessMonitor.this, ScriptingLayerService.class);
+                    intent.setAction(Constants.ACTION_KILL_PROCESS);
+                    intent.putExtra(Constants.EXTRA_PROXY_PORT, script.getPort());
+                    startService(intent);
+                }
+            }
+        });
+        AlertDialog dialog = builder.create();
+        dialog.show();
+
+        return false;
     }
 
-    @Override
+/*    @Override
+    public void onCreateContextMenu(ContextMenu menu, View view, ContextMenuInfo menuInfo) {
+        menu.add(Menu.NONE, 0, Menu.NONE, "Stop");
+    }*/
+
+/*    @Override
     public boolean onContextItemSelected(MenuItem item) {
         AdapterView.AdapterContextMenuInfo info;
         try {
@@ -145,7 +217,8 @@ public class ScriptProcessMonitor extends ListActivity {
             return false;
         }
 
-        InterpreterProcess script = mAdapter.getItem(info.position);
+        //InterpreterProcess script = mAdapter.getItem(info.position);
+        InterpreterProcess script = null;
         if (script == null) {
             Log.v("No script selected.");
             return false;
@@ -157,7 +230,7 @@ public class ScriptProcessMonitor extends ListActivity {
         startService(intent);
 
         return true;
-    }
+    }*/
 
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
@@ -172,9 +245,16 @@ public class ScriptProcessMonitor extends ListActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        Intent intent = new Intent(this, ScriptingLayerService.class);
-        intent.setAction(Constants.ACTION_KILL_ALL);
-        startService(intent);
+        int id = item.getItemId();
+
+        if (id == android.R.id.home) {
+            // Make Home button behave as hardware Back button.
+            onBackPressed();
+        } else {
+            Intent intent = new Intent(this, ScriptingLayerService.class);
+            intent.setAction(Constants.ACTION_KILL_ALL);
+            startService(intent);
+        }
         return true;
     }
 
@@ -197,7 +277,19 @@ public class ScriptProcessMonitor extends ListActivity {
             runOnUiThread(new Runnable() {
                 public void run() {
                     mProcessList = mUpdater.getFreshProcessList();
-                    mAdapter.notifyDataSetChanged();
+                    sMonitorListAdapter.setmProcessList(mProcessList);
+                    sMonitorListAdapter.notifyDataSetChanged();
+
+                    // Display/Hide "no running scripts" message.
+                    if (mProcessList.size() == 0) {
+                        sMonitorListView.setVisibility(View.GONE);
+                        noRunningScriptsMessage.setVisibility(View.VISIBLE);
+                        //toolbar.getMenu().clear();
+                    } else {
+                        sMonitorListView.setVisibility(View.VISIBLE);
+                        noRunningScriptsMessage.setVisibility(View.GONE);
+                    }
+/*                    mAdapter.notifyDataSetChanged();*/
                 }
             });
         }
@@ -207,7 +299,7 @@ public class ScriptProcessMonitor extends ListActivity {
         }
     }
 
-    private class ScriptMonitorAdapter extends BaseAdapter {
+/*    private class ScriptMonitorAdapter extends BaseAdapter {
 
         @Override
         public int getCount() {
@@ -245,5 +337,5 @@ public class ScriptProcessMonitor extends ListActivity {
             ((TextView) itemView.findViewById(R.id.process_status)).setText("PID " + process.getPid());
             return itemView;
         }
-    }
+    }*/
 }
