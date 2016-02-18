@@ -16,7 +16,7 @@ import java.util.List;
  *
  * @author Miguel Palacio (palaciodelgado [at] gmail [dot] com)
  */
-public class ScriptMonitorListAdapter extends SelectableAdapter<ScriptMonitorListAdapter.ViewHolder> {
+public class ScriptMonitorListAdapter extends RecyclerView.Adapter<ScriptMonitorListAdapter.ViewHolder> {
 
     static final int TYPE_LIST_ITEM = 0;
     static final int TYPE_HEADER = 1;

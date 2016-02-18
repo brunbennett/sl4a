@@ -15,7 +15,7 @@ import java.util.List;
  *
  * @author Miguel Palacio (palaciodelgado [at] gmail [dot] com)
  */
-public class LogcatListAdapter extends SelectableAdapter<LogcatListAdapter.ViewHolder> {
+public class LogcatListAdapter extends RecyclerView.Adapter<LogcatListAdapter.ViewHolder> {
 
     final static int TYPE_LIST_ITEM = 0;
     final static int TYPE_FOOTER = 1;

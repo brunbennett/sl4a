@@ -1,4 +1,4 @@
-package com.googlecode.android_scripting.custom_component;
+package com.googlecode.android_scripting.custom_component.item_lists;
 
 import android.content.res.TypedArray;
 import android.support.v7.widget.RecyclerView;
@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.googlecode.android_scripting.R;
-import com.googlecode.android_scripting.custom_component.item_lists.SelectableAdapter;
+import com.googlecode.android_scripting.custom_component.NavigationDrawer;
 
 /**
  * @author Miguel Palacio (palaciodelgado [at] gmail [dot] com)

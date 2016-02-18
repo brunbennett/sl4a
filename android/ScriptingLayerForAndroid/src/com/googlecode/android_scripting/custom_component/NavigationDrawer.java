@@ -1,6 +1,5 @@
 package com.googlecode.android_scripting.custom_component;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.res.TypedArray;
 import android.os.Build;
@@ -21,6 +20,7 @@ import com.googlecode.android_scripting.R;
 import com.googlecode.android_scripting.Version;
 import com.googlecode.android_scripting.activity.MainActivity;
 import com.googlecode.android_scripting.activity.Preferences;
+import com.googlecode.android_scripting.custom_component.item_lists.NavigationDrawerAdapter;
 import com.googlecode.android_scripting.fragment.InterpreterManager;
 import com.googlecode.android_scripting.fragment.LogcatViewer;
 import com.googlecode.android_scripting.fragment.ScriptManager;

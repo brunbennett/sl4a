@@ -19,7 +19,7 @@ import java.util.List;
  *
  * @author Miguel Palacio (palaciodelgado [at] gmail [dot] com)
  */
-public class InterpreterListAdapter extends SelectableAdapter<InterpreterListAdapter.ViewHolder> {
+public class InterpreterListAdapter extends RecyclerView.Adapter<InterpreterListAdapter.ViewHolder> {
 
     static final int TYPE_LIST_ITEM = 0;
     static final int TYPE_HEADER = 1;

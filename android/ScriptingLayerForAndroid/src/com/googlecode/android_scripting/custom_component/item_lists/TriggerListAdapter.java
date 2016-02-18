@@ -16,7 +16,7 @@ import java.util.List;
  *
  * @author Miguel Palacio (palaciodelgado [at] gmail [dot] com)
  */
-public class TriggerListAdapter extends SelectableAdapter<TriggerListAdapter.ViewHolder> {
+public class TriggerListAdapter extends RecyclerView.Adapter<TriggerListAdapter.ViewHolder> {
 
     static final int TYPE_LIST_ITEM = 0;
     static final int TYPE_HEADER = 1;

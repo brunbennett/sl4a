@@ -19,7 +19,7 @@ import java.util.List;
  *
  * @author Miguel Palacio (palaciodelgado [at] gmail [dot] com)
  */
-public class ScriptListAdapter extends SelectableAdapter<ScriptListAdapter.ViewHolder> {
+public class ScriptListAdapter extends RecyclerView.Adapter<ScriptListAdapter.ViewHolder> {
 
     static final int TYPE_LIST_ITEM = 0;
     static final int TYPE_HEADER = 1;
@@ -96,7 +96,7 @@ public class ScriptListAdapter extends SelectableAdapter<ScriptListAdapter.ViewH
         }
     }
 
-    // Inflate list_item_summaryr item_list_row_last in accordance with viewType.
+    // Inflate list_item_summary item_list_row_last in accordance with viewType.
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         final int layout;
