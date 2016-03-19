@@ -83,6 +83,315 @@ public class ViewInflater {
         HELPER_METHOD, ATTR_METHOD, VAL_MODIFIER, CONSTANT_CLASS, CONSTANT_PREFIX, CONSTANT_SUFFIX
     }
 
+    static {
+
+        // Support for standard HTML color names.
+
+        mColorNames.put("aliceblue", "#f0f8ff");
+        mColorNames.put("antiquewhite", "#faebd7");
+        mColorNames.put("aqua", "#00ffff");
+        mColorNames.put("aquamarine", "#7fffd4");
+        mColorNames.put("azure", "#f0ffff");
+        mColorNames.put("beige", "#f5f5dc");
+        mColorNames.put("bisque", "#ffe4c4");
+        mColorNames.put("black", "#000000");
+        mColorNames.put("blanchedalmond", "#ffebcd");
+        mColorNames.put("blue", "#0000ff");
+        mColorNames.put("blueviolet", "#8a2be2");
+        mColorNames.put("brown", "#a52a2a");
+        mColorNames.put("burlywood", "#deb887");
+        mColorNames.put("cadetblue", "#5f9ea0");
+        mColorNames.put("chartreuse", "#7fff00");
+        mColorNames.put("chocolate", "#d2691e");
+        mColorNames.put("coral", "#ff7f50");
+        mColorNames.put("cornflowerblue", "#6495ed");
+        mColorNames.put("cornsilk", "#fff8dc");
+        mColorNames.put("crimson", "#dc143c");
+        mColorNames.put("cyan", "#00ffff");
+        mColorNames.put("darkblue", "#00008b");
+        mColorNames.put("darkcyan", "#008b8b");
+        mColorNames.put("darkgoldenrod", "#b8860b");
+        mColorNames.put("darkgray", "#a9a9a9");
+        mColorNames.put("darkgrey", "#a9a9a9");
+        mColorNames.put("darkgreen", "#006400");
+        mColorNames.put("darkkhaki", "#bdb76b");
+        mColorNames.put("darkmagenta", "#8b008b");
+        mColorNames.put("darkolivegreen", "#556b2f");
+        mColorNames.put("darkorange", "#ff8c00");
+        mColorNames.put("darkorchid", "#9932cc");
+        mColorNames.put("darkred", "#8b0000");
+        mColorNames.put("darksalmon", "#e9967a");
+        mColorNames.put("darkseagreen", "#8fbc8f");
+        mColorNames.put("darkslateblue", "#483d8b");
+        mColorNames.put("darkslategray", "#2f4f4f");
+        mColorNames.put("darkslategrey", "#2f4f4f");
+        mColorNames.put("darkturquoise", "#00ced1");
+        mColorNames.put("darkviolet", "#9400d3");
+        mColorNames.put("deeppink", "#ff1493");
+        mColorNames.put("deepskyblue", "#00bfff");
+        mColorNames.put("dimgray", "#696969");
+        mColorNames.put("dimgrey", "#696969");
+        mColorNames.put("dodgerblue", "#1e90ff");
+        mColorNames.put("firebrick", "#b22222");
+        mColorNames.put("floralwhite", "#fffaf0");
+        mColorNames.put("forestgreen", "#228b22");
+        mColorNames.put("fuchsia", "#ff00ff");
+        mColorNames.put("gainsboro", "#dcdcdc");
+        mColorNames.put("ghostwhite", "#f8f8ff");
+        mColorNames.put("gold", "#ffd700");
+        mColorNames.put("goldenrod", "#daa520");
+        mColorNames.put("gray", "#808080");
+        mColorNames.put("grey", "#808080");
+        mColorNames.put("green", "#008000");
+        mColorNames.put("greenyellow", "#adff2f");
+        mColorNames.put("honeydew", "#f0fff0");
+        mColorNames.put("hotpink", "#ff69b4");
+        mColorNames.put("indianred ", "#cd5c5c");
+        mColorNames.put("indigo ", "#4b0082");
+        mColorNames.put("ivory", "#fffff0");
+        mColorNames.put("khaki", "#f0e68c");
+        mColorNames.put("lavender", "#e6e6fa");
+        mColorNames.put("lavenderblush", "#fff0f5");
+        mColorNames.put("lawngreen", "#7cfc00");
+        mColorNames.put("lemonchiffon", "#fffacd");
+        mColorNames.put("lightblue", "#add8e6");
+        mColorNames.put("lightcoral", "#f08080");
+        mColorNames.put("lightcyan", "#e0ffff");
+        mColorNames.put("lightgoldenrodyellow", "#fafad2");
+        mColorNames.put("lightgray", "#d3d3d3");
+        mColorNames.put("lightgrey", "#d3d3d3");
+        mColorNames.put("lightgreen", "#90ee90");
+        mColorNames.put("lightpink", "#ffb6c1");
+        mColorNames.put("lightsalmon", "#ffa07a");
+        mColorNames.put("lightseagreen", "#20b2aa");
+        mColorNames.put("lightskyblue", "#87cefa");
+        mColorNames.put("lightslategray", "#778899");
+        mColorNames.put("lightslategrey", "#778899");
+        mColorNames.put("lightsteelblue", "#b0c4de");
+        mColorNames.put("lightyellow", "#ffffe0");
+        mColorNames.put("lime", "#00ff00");
+        mColorNames.put("limegreen", "#32cd32");
+        mColorNames.put("linen", "#faf0e6");
+        mColorNames.put("magenta", "#ff00ff");
+        mColorNames.put("maroon", "#800000");
+        mColorNames.put("mediumaquamarine", "#66cdaa");
+        mColorNames.put("mediumblue", "#0000cd");
+        mColorNames.put("mediumorchid", "#ba55d3");
+        mColorNames.put("mediumpurple", "#9370d8");
+        mColorNames.put("mediumseagreen", "#3cb371");
+        mColorNames.put("mediumslateblue", "#7b68ee");
+        mColorNames.put("mediumspringgreen", "#00fa9a");
+        mColorNames.put("mediumturquoise", "#48d1cc");
+        mColorNames.put("mediumvioletred", "#c71585");
+        mColorNames.put("midnightblue", "#191970");
+        mColorNames.put("mintcream", "#f5fffa");
+        mColorNames.put("mistyrose", "#ffe4e1");
+        mColorNames.put("moccasin", "#ffe4b5");
+        mColorNames.put("navajowhite", "#ffdead");
+        mColorNames.put("navy", "#000080");
+        mColorNames.put("oldlace", "#fdf5e6");
+        mColorNames.put("olive", "#808000");
+        mColorNames.put("olivedrab", "#6b8e23");
+        mColorNames.put("orange", "#ffa500");
+        mColorNames.put("orangered", "#ff4500");
+        mColorNames.put("orchid", "#da70d6");
+        mColorNames.put("palegoldenrod", "#eee8aa");
+        mColorNames.put("palegreen", "#98fb98");
+        mColorNames.put("paleturquoise", "#afeeee");
+        mColorNames.put("palevioletred", "#d87093");
+        mColorNames.put("papayawhip", "#ffefd5");
+        mColorNames.put("peachpuff", "#ffdab9");
+        mColorNames.put("peru", "#cd853f");
+        mColorNames.put("pink", "#ffc0cb");
+        mColorNames.put("plum", "#dda0dd");
+        mColorNames.put("powderblue", "#b0e0e6");
+        mColorNames.put("purple", "#800080");
+        mColorNames.put("red", "#ff0000");
+        mColorNames.put("rosybrown", "#bc8f8f");
+        mColorNames.put("royalblue", "#4169e1");
+        mColorNames.put("saddlebrown", "#8b4513");
+        mColorNames.put("salmon", "#fa8072");
+        mColorNames.put("sandybrown", "#f4a460");
+        mColorNames.put("seagreen", "#2e8b57");
+        mColorNames.put("seashell", "#fff5ee");
+        mColorNames.put("sienna", "#a0522d");
+        mColorNames.put("silver", "#c0c0c0");
+        mColorNames.put("skyblue", "#87ceeb");
+        mColorNames.put("slateblue", "#6a5acd");
+        mColorNames.put("slategray", "#708090");
+        mColorNames.put("slategrey", "#708090");
+        mColorNames.put("snow", "#fffafa");
+        mColorNames.put("springgreen", "#00ff7f");
+        mColorNames.put("steelblue", "#4682b4");
+        mColorNames.put("tan", "#d2b48c");
+        mColorNames.put("teal", "#008080");
+        mColorNames.put("thistle", "#d8bfd8");
+        mColorNames.put("tomato", "#ff6347");
+        mColorNames.put("turquoise", "#40e0d0");
+        mColorNames.put("violet", "#ee82ee");
+        mColorNames.put("wheat", "#f5deb3");
+        mColorNames.put("white", "#ffffff");
+        mColorNames.put("whitesmoke", "#f5f5f5");
+        mColorNames.put("yellow", "#ffff00");
+        mColorNames.put("yellowgreen", "#9acd32");
+
+        // RelativeLayout class constants.
+
+        mRelative.put("above", RelativeLayout.ABOVE);
+        mRelative.put("alignBaseline", RelativeLayout.ALIGN_BASELINE);
+        mRelative.put("alignBottom", RelativeLayout.ALIGN_BOTTOM);
+        mRelative.put("alignLeft", RelativeLayout.ALIGN_LEFT);
+        mRelative.put("alignParentBottom", RelativeLayout.ALIGN_PARENT_BOTTOM);
+        mRelative.put("alignParentLeft", RelativeLayout.ALIGN_PARENT_LEFT);
+        mRelative.put("alignParentRight", RelativeLayout.ALIGN_PARENT_RIGHT);
+        mRelative.put("alignParentTop", RelativeLayout.ALIGN_PARENT_TOP);
+        mRelative.put("alignRight", RelativeLayout.ALIGN_PARENT_RIGHT);
+        mRelative.put("alignTop", RelativeLayout.ALIGN_TOP);
+        // mRelative.put("alignWithParentIfMissing",RelativeLayout.); // No idea what this translates to.
+        mRelative.put("below", RelativeLayout.BELOW);
+        mRelative.put("centerHorizontal", RelativeLayout.CENTER_HORIZONTAL);
+        mRelative.put("centerInParent", RelativeLayout.CENTER_IN_PARENT);
+        mRelative.put("centerVertical", RelativeLayout.CENTER_VERTICAL);
+        mRelative.put("toLeftOf", RelativeLayout.LEFT_OF);
+        mRelative.put("toRightOf", RelativeLayout.RIGHT_OF);
+
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.JELLY_BEAN) {
+            mRelative.put("alignEnd", RelativeLayout.ALIGN_END);
+            mRelative.put("alignParentEnd", RelativeLayout.ALIGN_PARENT_END);
+            mRelative.put("alignParentStart", RelativeLayout.ALIGN_PARENT_START);
+            mRelative.put("alignStart", RelativeLayout.ALIGN_START);
+            mRelative.put("toEndOf", RelativeLayout.END_OF);
+            mRelative.put("toStartOf", RelativeLayout.START_OF);
+        }
+
+        // XML attributes helper HashMap.
+
+        AttributeInfo helper = AttributeInfo.HELPER_METHOD;
+        AttributeInfo method = AttributeInfo.ATTR_METHOD;
+        AttributeInfo mod = AttributeInfo.VAL_MODIFIER;
+        AttributeInfo clazz = AttributeInfo.CONSTANT_CLASS;
+        AttributeInfo prefix = AttributeInfo.CONSTANT_PREFIX;
+        AttributeInfo suffix = AttributeInfo.CONSTANT_SUFFIX;
+
+        // View
+        mXmlAttrs.put("accessibilityTraversalAfter", mapAttrInfo(mod, VIEW_ID));
+        mXmlAttrs.put("accessibilityTraversalBefore", mapAttrInfo(mod, VIEW_ID));
+        mXmlAttrs.put("background", mapAttrInfo(helper, "setBackground"));
+        mXmlAttrs.put("backgroundTint", mapAttrInfo(helper, "setTint"));
+/*        mXmlAttrs.put("backgroundTintMode", mapAttrInfo("???", null, null, null); // maybe too complex to offer...*/
+        mXmlAttrs.put("elevation", mapAttrInfo(mod, DIMENSION));
+/*        mXmlAttrs.put("fadeScrollbars", mapAttrInfo(null, "setScrollbarFadingEnabled", null, null); // Crashes the app if view is not scrollable (e.g., ScrollView). I haven't been able to catch the exception.*/
+        mXmlAttrs.put("fadingEdgeLength", mapAttrInfo(mod, DIMENSION));
+        //mXmlAttrs.put("foreground", RESOURCE);    // waiting to compile project for API 23
+        //mXmlAttrs.put("foregroundTint", "setBackgroundTintList," + COLOR_RES); // depends on foreground
+        //mXmlAttrs.put("foregroundTintMode", "???"); // depends on foreground
+        mXmlAttrs.put("id", mapAttrInfo(helper, "setViewId"));
+        mXmlAttrs.put("isScrollContainer", mapAttrInfo(method, "setScrollContainer"));
+/*        mXmlAttrs.put("layerType", mapAttrInfo("???", null, null, null); // maybe too complex to offer...*/
+        mXmlAttrs.put("minHeight", mapAttrInfo(method, "setMinimumHeight", mod, DIMENSION));
+        mXmlAttrs.put("minWidth", mapAttrInfo(method, "setMinimumWidth", mod, DIMENSION));
+        mXmlAttrs.put("nextFocusDown", mapAttrInfo(method, "setNextFocusDownId", mod, VIEW_ID));
+        mXmlAttrs.put("nextFocusForward", mapAttrInfo(method, "setNextFocusForwardId", mod, VIEW_ID));
+        mXmlAttrs.put("nextFocusLeft", mapAttrInfo(method, "setNextFocusLeftId", mod, VIEW_ID));
+        mXmlAttrs.put("nextFocusRight", mapAttrInfo(method, "setNextFocusRightId", mod, VIEW_ID));
+        mXmlAttrs.put("nextFocusUp", mapAttrInfo(method, "setNextFocusUpId", mod, VIEW_ID));
+        mXmlAttrs.put("padding", mapAttrInfo(helper, "setPadding"));
+        mXmlAttrs.put("paddingBottom", mapAttrInfo(helper, "setPadding"));
+        mXmlAttrs.put("paddingEnd", mapAttrInfo(helper, "setPadding"));
+        mXmlAttrs.put("paddingLeft", mapAttrInfo(helper, "setPadding"));
+        mXmlAttrs.put("paddingRight", mapAttrInfo(helper, "setPadding"));
+        mXmlAttrs.put("paddingStart", mapAttrInfo(helper, "setPadding"));
+        mXmlAttrs.put("paddingTop", mapAttrInfo(helper, "setPadding"));
+        mXmlAttrs.put("requiresFadingEdge", mapAttrInfo(helper, "setFadingEdge"));
+        //mXmlAttrs.put("scrollIndicators", mapAttrInfo(method, "setScrollIndicators", prefix, "scroll_indicator_"));  // Test pending for API >= 23.
+        mXmlAttrs.put("scrollbarDefaultDelayBeforeFade", mapAttrInfo(method, "setScrollBarDefaultDelayBeforeFade"));
+        mXmlAttrs.put("scrollbarFadeDuration", mapAttrInfo(method, "setScrollBarFadeDuration"));
+        mXmlAttrs.put("scrollbarSize", mapAttrInfo(method, "setScrollBarSize", mod, DIMENSION));
+        mXmlAttrs.put("scrollbarStyle", mapAttrInfo(method, "setScrollBarStyle", prefix, "scrollbars_"));
+        mXmlAttrs.put("transformPivotX", mapAttrInfo(method, "setPivotX", mod, DIMENSION));
+        mXmlAttrs.put("transformPivotY", mapAttrInfo(method, "setPivotY", mod, DIMENSION));
+        mXmlAttrs.put("translationX", mapAttrInfo(mod, DIMENSION));
+        mXmlAttrs.put("translationY", mapAttrInfo(mod, DIMENSION));
+        mXmlAttrs.put("translationZ", mapAttrInfo(mod, DIMENSION));
+
+        // ImageView
+        mXmlAttrs.put("baseline", mapAttrInfo(mod, DIMENSION));
+        mXmlAttrs.put("maxHeight", mapAttrInfo(mod, DIMENSION));
+        mXmlAttrs.put("maxWidth", mapAttrInfo(mod, DIMENSION));
+        mXmlAttrs.put("src", mapAttrInfo(helper, "setImage"));
+/*        mXmlAttrs.put("scaleType", "con");*/
+        mXmlAttrs.put("tint", mapAttrInfo(helper, "setTint"));
+/*        mXmlAttrs.put("tintMode", "setImageTintMode"+"con");*/
+
+        // TextView
+/*        mXmlAttrs.put("autoLink", mapAttrInfo(null, "setAutoLinkMask", null, "android.text.util.Linkify"); // it won't work because of different constants suffixes*/
+        mXmlAttrs.put("autoText", mapAttrInfo(helper, "setKeyListener")); // conflicts with capitalize.
+        mXmlAttrs.put("bufferType", mapAttrInfo(helper, "setBufferType"));
+        mXmlAttrs.put("capitalize", mapAttrInfo(helper, "setKeyListener")); // conflicts with autoText.
+        mXmlAttrs.put("digits", mapAttrInfo(helper, "setKeyListener"));
+        mXmlAttrs.put("drawableBottom", mapAttrInfo(helper, "setCompoundDrawable"));
+        mXmlAttrs.put("drawableEnd", mapAttrInfo(helper, "setCompoundDrawable"));
+        mXmlAttrs.put("drawableLeft", mapAttrInfo(helper, "setCompoundDrawable"));
+        mXmlAttrs.put("drawablePadding", mapAttrInfo(method, "setCompoundDrawablePadding", mod, DIMENSION));
+        mXmlAttrs.put("drawableStart", mapAttrInfo(helper, "setCompoundDrawable"));
+        mXmlAttrs.put("drawableRight", mapAttrInfo(helper, "setCompoundDrawable"));
+        //mXmlAttrs.put("drawableTint", mapAttrInfo("setTint", null, null, null));  // API 23
+/*        mXmlAttrs.put("drawableTintMode", mapAttrInfo("???", null, null, null); // maybe too complex to offer...*/
+        mXmlAttrs.put("drawableTop", mapAttrInfo(helper, "setCompoundDrawable"));
+        mXmlAttrs.put("ellipsize", mapAttrInfo(helper, "setEllipsize"));
+        mXmlAttrs.put("fontFamily", mapAttrInfo(helper, "setTypeface"));
+        mXmlAttrs.put("height", mapAttrInfo(mod, DIMENSION));
+        mXmlAttrs.put("imeActionId", mapAttrInfo(helper, "setImeAction"));
+        mXmlAttrs.put("imeActionLabel", mapAttrInfo(helper, "setImeAction"));
+        mXmlAttrs.put("imeOptions", mapAttrInfo(clazz, "android.view.inputmethod.EditorInfo", prefix, "ime_"));
+/*        mXmlAttrs.put("inputMethod", mapAttrInfo("setKeyListener", null, null, null));  // haven't figured out how this attr works...*/
+        mXmlAttrs.put("inputType", mapAttrInfo(clazz, "android.text.InputType"));    // Constants' values handled with mInputTypes list.
+        mXmlAttrs.put("lineSpacingExtra", mapAttrInfo(helper, "setLineSpacing"));
+        mXmlAttrs.put("lineSpacingMultiplier", mapAttrInfo(helper, "setLineSpacing"));
+        mXmlAttrs.put("maxLength", mapAttrInfo(helper, "setMaxLength"));
+        mXmlAttrs.put("scrollHorizontally", mapAttrInfo(method, "setHorizontallyScrolling"));
+        mXmlAttrs.put("shadowColor", mapAttrInfo(helper, "setShadowLayer"));
+        mXmlAttrs.put("shadowDx", mapAttrInfo(helper, "setShadowLayer"));
+        mXmlAttrs.put("shadowDy", mapAttrInfo(helper, "setShadowLayer"));
+        mXmlAttrs.put("shadowRadius", mapAttrInfo(helper, "setShadowLayer"));
+        mXmlAttrs.put("textAllCaps", mapAttrInfo(method, "setAllCaps"));
+        mXmlAttrs.put("textColor", mapAttrInfo(mod, COLOR));
+        mXmlAttrs.put("textColorHighlight", mapAttrInfo(method, "setHighlightColor", mod, COLOR));
+        mXmlAttrs.put("textColorHint", mapAttrInfo(method, "setHintTextColor", mod, COLOR));
+        mXmlAttrs.put("textColorLink", mapAttrInfo(method, "setLinkTextColor", mod, COLOR));
+        mXmlAttrs.put("textSize", mapAttrInfo(helper, "setTextSize"));
+        mXmlAttrs.put("textStyle", mapAttrInfo(helper, "setTextStyle"));
+        mXmlAttrs.put("typeface", mapAttrInfo(helper, "setTypeface"));
+        mXmlAttrs.put("width", mapAttrInfo(mod, DIMENSION));
+
+        // ViewGroup (Layout Params)
+        mXmlAttrs.put("layout_", mapAttrInfo(helper, "setLayoutProperty"));
+
+        // LinearLayout
+        mXmlAttrs.put("divider", mapAttrInfo(helper, "setDividerDrawable"));
+        mXmlAttrs.put("measureWithLargestChild", mapAttrInfo(method, "setMeasureWithLargestChildEnabled"));
+        mXmlAttrs.put("showDividers", mapAttrInfo(prefix, "show_divider_"));
+
+        // RelativeLayout
+        mXmlAttrs.put("ignoreGravity", mapAttrInfo(mod, VIEW_ID));
+
+        // TableLayout
+        mXmlAttrs.put("collapseColumns", mapAttrInfo(helper, "setTableColumns")); // works but a way to restore should be offered...
+        mXmlAttrs.put("shrinkColumns", mapAttrInfo(helper, "setTableColumns"));
+        mXmlAttrs.put("stretchColumns", mapAttrInfo(helper, "setTableColumns"));
+
+        // Various Classes
+        mXmlAttrs.put("gravity", mapAttrInfo(clazz, "android.view.Gravity"));
+    }
+
+    private static Map<AttributeInfo, String> mapAttrInfo(Object... attrInfo) {
+        Map<AttributeInfo, String> infoMap = new EnumMap<>(AttributeInfo.class);
+        for (int i = 0; i < attrInfo.length; i = i + 2) {
+            infoMap.put((AttributeInfo) attrInfo[i], (String) attrInfo[i + 1]);
+        }
+        return infoMap;
+    }
+
     public static XmlPullParserFactory getFactory() throws XmlPullParserException {
         if (mFactory == null) {
             mFactory = XmlPullParserFactory.newInstance();
@@ -106,6 +415,45 @@ public class ViewInflater {
         xml.setInput(ir);
         return xml;
     }
+
+    public static Map<String, Integer> getInputTypes() {
+        if (mInputTypes.size() == 0) {
+            mInputTypes.put("none", 0x00000000);
+            mInputTypes.put("text", 0x00000001);
+            mInputTypes.put("textCapCharacters", 0x00001001);
+            mInputTypes.put("textCapWords", 0x00002001);
+            mInputTypes.put("textCapSentences", 0x00004001);
+            mInputTypes.put("textAutoCorrect", 0x00008001);
+            mInputTypes.put("textAutoComplete", 0x00010001);
+            mInputTypes.put("textMultiLine", 0x00020001);
+            mInputTypes.put("textImeMultiLine", 0x00040001);
+            mInputTypes.put("textNoSuggestions", 0x00080001);
+            mInputTypes.put("textUri", 0x00000011);
+            mInputTypes.put("textEmailAddress", 0x00000021);
+            mInputTypes.put("textEmailSubject", 0x00000031);
+            mInputTypes.put("textShortMessage", 0x00000041);
+            mInputTypes.put("textLongMessage", 0x00000051);
+            mInputTypes.put("textPersonName", 0x00000061);
+            mInputTypes.put("textPostalAddress", 0x00000071);
+            mInputTypes.put("textPassword", 0x00000081);
+            mInputTypes.put("textVisiblePassword", 0x00000091);
+            mInputTypes.put("textWebEditText", 0x000000a1);
+            mInputTypes.put("textFilter", 0x000000b1);
+            mInputTypes.put("textPhonetic", 0x000000c1);
+            mInputTypes.put("textWebEmailAddress", 0x000000d1);
+            mInputTypes.put("textWebPassword", 0x000000e1);
+            mInputTypes.put("number", 0x00000002);
+            mInputTypes.put("numberSigned", 0x00001002);
+            mInputTypes.put("numberDecimal", 0x00002002);
+            mInputTypes.put("numberPassword", 0x00000012);
+            mInputTypes.put("phone", 0x00000003);
+            mInputTypes.put("datetime", 0x00000004);
+            mInputTypes.put("date", 0x00000014);
+            mInputTypes.put("time", 0x00000024);
+        }
+        return mInputTypes;
+    }
+
 
     public View inflate(Activity context, XmlPullParser xml) throws XmlPullParserException,
             IOException, IllegalArgumentException, IllegalAccessException, InvocationTargetException {
@@ -401,7 +749,7 @@ public class ViewInflater {
         }
     }
 
-    private String toUnderscore(String s) {
+    private String toSnakeCase(String s) {
         if (s == null) {
             return null;
         }
@@ -568,341 +916,6 @@ public class ViewInflater {
         getErrors().clear();
         mIdList.clear();
         mNextSeq = BASESEQ;
-    }
-
-    public static Map<String, Integer> getInputTypes() {
-        if (mInputTypes.size() == 0) {
-            mInputTypes.put("none", 0x00000000);
-            mInputTypes.put("text", 0x00000001);
-            mInputTypes.put("textCapCharacters", 0x00001001);
-            mInputTypes.put("textCapWords", 0x00002001);
-            mInputTypes.put("textCapSentences", 0x00004001);
-            mInputTypes.put("textAutoCorrect", 0x00008001);
-            mInputTypes.put("textAutoComplete", 0x00010001);
-            mInputTypes.put("textMultiLine", 0x00020001);
-            mInputTypes.put("textImeMultiLine", 0x00040001);
-            mInputTypes.put("textNoSuggestions", 0x00080001);
-            mInputTypes.put("textUri", 0x00000011);
-            mInputTypes.put("textEmailAddress", 0x00000021);
-            mInputTypes.put("textEmailSubject", 0x00000031);
-            mInputTypes.put("textShortMessage", 0x00000041);
-            mInputTypes.put("textLongMessage", 0x00000051);
-            mInputTypes.put("textPersonName", 0x00000061);
-            mInputTypes.put("textPostalAddress", 0x00000071);
-            mInputTypes.put("textPassword", 0x00000081);
-            mInputTypes.put("textVisiblePassword", 0x00000091);
-            mInputTypes.put("textWebEditText", 0x000000a1);
-            mInputTypes.put("textFilter", 0x000000b1);
-            mInputTypes.put("textPhonetic", 0x000000c1);
-            mInputTypes.put("textWebEmailAddress", 0x000000d1);
-            mInputTypes.put("textWebPassword", 0x000000e1);
-            mInputTypes.put("number", 0x00000002);
-            mInputTypes.put("numberSigned", 0x00001002);
-            mInputTypes.put("numberDecimal", 0x00002002);
-            mInputTypes.put("numberPassword", 0x00000012);
-            mInputTypes.put("phone", 0x00000003);
-            mInputTypes.put("datetime", 0x00000004);
-            mInputTypes.put("date", 0x00000014);
-            mInputTypes.put("time", 0x00000024);
-        }
-        return mInputTypes;
-    }
-
-    static {
-
-        // Support for standard HTML color names.
-        mColorNames.put("aliceblue", "#f0f8ff");
-        mColorNames.put("antiquewhite", "#faebd7");
-        mColorNames.put("aqua", "#00ffff");
-        mColorNames.put("aquamarine", "#7fffd4");
-        mColorNames.put("azure", "#f0ffff");
-        mColorNames.put("beige", "#f5f5dc");
-        mColorNames.put("bisque", "#ffe4c4");
-        mColorNames.put("black", "#000000");
-        mColorNames.put("blanchedalmond", "#ffebcd");
-        mColorNames.put("blue", "#0000ff");
-        mColorNames.put("blueviolet", "#8a2be2");
-        mColorNames.put("brown", "#a52a2a");
-        mColorNames.put("burlywood", "#deb887");
-        mColorNames.put("cadetblue", "#5f9ea0");
-        mColorNames.put("chartreuse", "#7fff00");
-        mColorNames.put("chocolate", "#d2691e");
-        mColorNames.put("coral", "#ff7f50");
-        mColorNames.put("cornflowerblue", "#6495ed");
-        mColorNames.put("cornsilk", "#fff8dc");
-        mColorNames.put("crimson", "#dc143c");
-        mColorNames.put("cyan", "#00ffff");
-        mColorNames.put("darkblue", "#00008b");
-        mColorNames.put("darkcyan", "#008b8b");
-        mColorNames.put("darkgoldenrod", "#b8860b");
-        mColorNames.put("darkgray", "#a9a9a9");
-        mColorNames.put("darkgrey", "#a9a9a9");
-        mColorNames.put("darkgreen", "#006400");
-        mColorNames.put("darkkhaki", "#bdb76b");
-        mColorNames.put("darkmagenta", "#8b008b");
-        mColorNames.put("darkolivegreen", "#556b2f");
-        mColorNames.put("darkorange", "#ff8c00");
-        mColorNames.put("darkorchid", "#9932cc");
-        mColorNames.put("darkred", "#8b0000");
-        mColorNames.put("darksalmon", "#e9967a");
-        mColorNames.put("darkseagreen", "#8fbc8f");
-        mColorNames.put("darkslateblue", "#483d8b");
-        mColorNames.put("darkslategray", "#2f4f4f");
-        mColorNames.put("darkslategrey", "#2f4f4f");
-        mColorNames.put("darkturquoise", "#00ced1");
-        mColorNames.put("darkviolet", "#9400d3");
-        mColorNames.put("deeppink", "#ff1493");
-        mColorNames.put("deepskyblue", "#00bfff");
-        mColorNames.put("dimgray", "#696969");
-        mColorNames.put("dimgrey", "#696969");
-        mColorNames.put("dodgerblue", "#1e90ff");
-        mColorNames.put("firebrick", "#b22222");
-        mColorNames.put("floralwhite", "#fffaf0");
-        mColorNames.put("forestgreen", "#228b22");
-        mColorNames.put("fuchsia", "#ff00ff");
-        mColorNames.put("gainsboro", "#dcdcdc");
-        mColorNames.put("ghostwhite", "#f8f8ff");
-        mColorNames.put("gold", "#ffd700");
-        mColorNames.put("goldenrod", "#daa520");
-        mColorNames.put("gray", "#808080");
-        mColorNames.put("grey", "#808080");
-        mColorNames.put("green", "#008000");
-        mColorNames.put("greenyellow", "#adff2f");
-        mColorNames.put("honeydew", "#f0fff0");
-        mColorNames.put("hotpink", "#ff69b4");
-        mColorNames.put("indianred ", "#cd5c5c");
-        mColorNames.put("indigo ", "#4b0082");
-        mColorNames.put("ivory", "#fffff0");
-        mColorNames.put("khaki", "#f0e68c");
-        mColorNames.put("lavender", "#e6e6fa");
-        mColorNames.put("lavenderblush", "#fff0f5");
-        mColorNames.put("lawngreen", "#7cfc00");
-        mColorNames.put("lemonchiffon", "#fffacd");
-        mColorNames.put("lightblue", "#add8e6");
-        mColorNames.put("lightcoral", "#f08080");
-        mColorNames.put("lightcyan", "#e0ffff");
-        mColorNames.put("lightgoldenrodyellow", "#fafad2");
-        mColorNames.put("lightgray", "#d3d3d3");
-        mColorNames.put("lightgrey", "#d3d3d3");
-        mColorNames.put("lightgreen", "#90ee90");
-        mColorNames.put("lightpink", "#ffb6c1");
-        mColorNames.put("lightsalmon", "#ffa07a");
-        mColorNames.put("lightseagreen", "#20b2aa");
-        mColorNames.put("lightskyblue", "#87cefa");
-        mColorNames.put("lightslategray", "#778899");
-        mColorNames.put("lightslategrey", "#778899");
-        mColorNames.put("lightsteelblue", "#b0c4de");
-        mColorNames.put("lightyellow", "#ffffe0");
-        mColorNames.put("lime", "#00ff00");
-        mColorNames.put("limegreen", "#32cd32");
-        mColorNames.put("linen", "#faf0e6");
-        mColorNames.put("magenta", "#ff00ff");
-        mColorNames.put("maroon", "#800000");
-        mColorNames.put("mediumaquamarine", "#66cdaa");
-        mColorNames.put("mediumblue", "#0000cd");
-        mColorNames.put("mediumorchid", "#ba55d3");
-        mColorNames.put("mediumpurple", "#9370d8");
-        mColorNames.put("mediumseagreen", "#3cb371");
-        mColorNames.put("mediumslateblue", "#7b68ee");
-        mColorNames.put("mediumspringgreen", "#00fa9a");
-        mColorNames.put("mediumturquoise", "#48d1cc");
-        mColorNames.put("mediumvioletred", "#c71585");
-        mColorNames.put("midnightblue", "#191970");
-        mColorNames.put("mintcream", "#f5fffa");
-        mColorNames.put("mistyrose", "#ffe4e1");
-        mColorNames.put("moccasin", "#ffe4b5");
-        mColorNames.put("navajowhite", "#ffdead");
-        mColorNames.put("navy", "#000080");
-        mColorNames.put("oldlace", "#fdf5e6");
-        mColorNames.put("olive", "#808000");
-        mColorNames.put("olivedrab", "#6b8e23");
-        mColorNames.put("orange", "#ffa500");
-        mColorNames.put("orangered", "#ff4500");
-        mColorNames.put("orchid", "#da70d6");
-        mColorNames.put("palegoldenrod", "#eee8aa");
-        mColorNames.put("palegreen", "#98fb98");
-        mColorNames.put("paleturquoise", "#afeeee");
-        mColorNames.put("palevioletred", "#d87093");
-        mColorNames.put("papayawhip", "#ffefd5");
-        mColorNames.put("peachpuff", "#ffdab9");
-        mColorNames.put("peru", "#cd853f");
-        mColorNames.put("pink", "#ffc0cb");
-        mColorNames.put("plum", "#dda0dd");
-        mColorNames.put("powderblue", "#b0e0e6");
-        mColorNames.put("purple", "#800080");
-        mColorNames.put("red", "#ff0000");
-        mColorNames.put("rosybrown", "#bc8f8f");
-        mColorNames.put("royalblue", "#4169e1");
-        mColorNames.put("saddlebrown", "#8b4513");
-        mColorNames.put("salmon", "#fa8072");
-        mColorNames.put("sandybrown", "#f4a460");
-        mColorNames.put("seagreen", "#2e8b57");
-        mColorNames.put("seashell", "#fff5ee");
-        mColorNames.put("sienna", "#a0522d");
-        mColorNames.put("silver", "#c0c0c0");
-        mColorNames.put("skyblue", "#87ceeb");
-        mColorNames.put("slateblue", "#6a5acd");
-        mColorNames.put("slategray", "#708090");
-        mColorNames.put("slategrey", "#708090");
-        mColorNames.put("snow", "#fffafa");
-        mColorNames.put("springgreen", "#00ff7f");
-        mColorNames.put("steelblue", "#4682b4");
-        mColorNames.put("tan", "#d2b48c");
-        mColorNames.put("teal", "#008080");
-        mColorNames.put("thistle", "#d8bfd8");
-        mColorNames.put("tomato", "#ff6347");
-        mColorNames.put("turquoise", "#40e0d0");
-        mColorNames.put("violet", "#ee82ee");
-        mColorNames.put("wheat", "#f5deb3");
-        mColorNames.put("white", "#ffffff");
-        mColorNames.put("whitesmoke", "#f5f5f5");
-        mColorNames.put("yellow", "#ffff00");
-        mColorNames.put("yellowgreen", "#9acd32");
-
-        mRelative.put("above", RelativeLayout.ABOVE);
-        mRelative.put("alignBaseline", RelativeLayout.ALIGN_BASELINE);
-        mRelative.put("alignBottom", RelativeLayout.ALIGN_BOTTOM);
-        mRelative.put("alignLeft", RelativeLayout.ALIGN_LEFT);
-        mRelative.put("alignParentBottom", RelativeLayout.ALIGN_PARENT_BOTTOM);
-        mRelative.put("alignParentLeft", RelativeLayout.ALIGN_PARENT_LEFT);
-        mRelative.put("alignParentRight", RelativeLayout.ALIGN_PARENT_RIGHT);
-        mRelative.put("alignParentTop", RelativeLayout.ALIGN_PARENT_TOP);
-        mRelative.put("alignRight", RelativeLayout.ALIGN_PARENT_RIGHT);
-        mRelative.put("alignTop", RelativeLayout.ALIGN_TOP);
-        // mRelative.put("alignWithParentIfMissing",RelativeLayout.); // No idea what this translates to.
-        mRelative.put("below", RelativeLayout.BELOW);
-        mRelative.put("centerHorizontal", RelativeLayout.CENTER_HORIZONTAL);
-        mRelative.put("centerInParent", RelativeLayout.CENTER_IN_PARENT);
-        mRelative.put("centerVertical", RelativeLayout.CENTER_VERTICAL);
-        mRelative.put("toLeftOf", RelativeLayout.LEFT_OF);
-        mRelative.put("toRightOf", RelativeLayout.RIGHT_OF);
-
-        // XML attributes helper HashMap.
-
-        AttributeInfo helper = AttributeInfo.HELPER_METHOD;
-        AttributeInfo method = AttributeInfo.ATTR_METHOD;
-        AttributeInfo mod = AttributeInfo.VAL_MODIFIER;
-        AttributeInfo clazz = AttributeInfo.CONSTANT_CLASS;
-        AttributeInfo prefix = AttributeInfo.CONSTANT_PREFIX;
-        AttributeInfo suffix = AttributeInfo.CONSTANT_SUFFIX;
-
-        // View
-        mXmlAttrs.put("accessibilityTraversalAfter", mapAttrInfo(mod, VIEW_ID));
-        mXmlAttrs.put("accessibilityTraversalBefore", mapAttrInfo(mod, VIEW_ID));
-        mXmlAttrs.put("background", mapAttrInfo(helper, "setBackground"));
-        mXmlAttrs.put("backgroundTint", mapAttrInfo(helper, "setTint"));
-/*        mXmlAttrs.put("backgroundTintMode", mapAttrInfo("???", null, null, null); // maybe too complex to offer...*/
-        mXmlAttrs.put("elevation", mapAttrInfo(mod, DIMENSION));
-/*        mXmlAttrs.put("fadeScrollbars", mapAttrInfo(null, "setScrollbarFadingEnabled", null, null); // Crashes the app if view is not scrollable (e.g., ScrollView). I haven't been able to catch the exception.*/
-        mXmlAttrs.put("fadingEdgeLength", mapAttrInfo(mod, DIMENSION));
-        //mXmlAttrs.put("foreground", RESOURCE);    // waiting to compile project for API 23
-        //mXmlAttrs.put("foregroundTint", "setBackgroundTintList," + COLOR_RES); // depends on foreground
-        //mXmlAttrs.put("foregroundTintMode", "???"); // depends on foreground
-        mXmlAttrs.put("id", mapAttrInfo(helper, "setViewId"));
-        mXmlAttrs.put("isScrollContainer", mapAttrInfo(method, "setScrollContainer"));
-/*        mXmlAttrs.put("layerType", mapAttrInfo("???", null, null, null); // maybe too complex to offer...*/
-        mXmlAttrs.put("minHeight", mapAttrInfo(method, "setMinimumHeight", mod, DIMENSION));
-        mXmlAttrs.put("minWidth", mapAttrInfo(method, "setMinimumWidth", mod, DIMENSION));
-        mXmlAttrs.put("nextFocusDown", mapAttrInfo(method, "setNextFocusDownId", mod, VIEW_ID));
-        mXmlAttrs.put("nextFocusForward", mapAttrInfo(method, "setNextFocusForwardId", mod, VIEW_ID));
-        mXmlAttrs.put("nextFocusLeft", mapAttrInfo(method, "setNextFocusLeftId", mod, VIEW_ID));
-        mXmlAttrs.put("nextFocusRight", mapAttrInfo(method, "setNextFocusRightId", mod, VIEW_ID));
-        mXmlAttrs.put("nextFocusUp", mapAttrInfo(method, "setNextFocusUpId", mod, VIEW_ID));
-        mXmlAttrs.put("padding", mapAttrInfo(helper, "setPadding"));
-        mXmlAttrs.put("paddingBottom", mapAttrInfo(helper, "setPadding"));
-        mXmlAttrs.put("paddingEnd", mapAttrInfo(helper, "setPadding"));
-        mXmlAttrs.put("paddingLeft", mapAttrInfo(helper, "setPadding"));
-        mXmlAttrs.put("paddingRight", mapAttrInfo(helper, "setPadding"));
-        mXmlAttrs.put("paddingStart", mapAttrInfo(helper, "setPadding"));
-        mXmlAttrs.put("paddingTop", mapAttrInfo(helper, "setPadding"));
-        mXmlAttrs.put("requiresFadingEdge", mapAttrInfo(helper, "setFadingEdge"));
-        //mXmlAttrs.put("scrollIndicators", mapAttrInfo(method, "setScrollIndicators", prefix, "scroll_indicator_"));  // Test pending for API >= 23.
-        mXmlAttrs.put("scrollbarDefaultDelayBeforeFade", mapAttrInfo(method, "setScrollBarDefaultDelayBeforeFade"));
-        mXmlAttrs.put("scrollbarFadeDuration", mapAttrInfo(method, "setScrollBarFadeDuration"));
-        mXmlAttrs.put("scrollbarSize", mapAttrInfo(method, "setScrollBarSize", mod, DIMENSION));
-        mXmlAttrs.put("scrollbarStyle", mapAttrInfo(method, "setScrollBarStyle", prefix, "scrollbars_"));
-        mXmlAttrs.put("transformPivotX", mapAttrInfo(method, "setPivotX", mod, DIMENSION));
-        mXmlAttrs.put("transformPivotY", mapAttrInfo(method, "setPivotY", mod, DIMENSION));
-        mXmlAttrs.put("translationX", mapAttrInfo(mod, DIMENSION));
-        mXmlAttrs.put("translationY", mapAttrInfo(mod, DIMENSION));
-        mXmlAttrs.put("translationZ", mapAttrInfo(mod, DIMENSION));
-
-        // ImageView
-        mXmlAttrs.put("baseline", mapAttrInfo(mod, DIMENSION));
-        mXmlAttrs.put("maxHeight", mapAttrInfo(mod, DIMENSION));
-        mXmlAttrs.put("maxWidth", mapAttrInfo(mod, DIMENSION));
-        mXmlAttrs.put("src", mapAttrInfo(helper, "setImage"));
-/*        mXmlAttrs.put("scaleType", "con");*/
-        mXmlAttrs.put("tint", mapAttrInfo(helper, "setTint"));
-/*        mXmlAttrs.put("tintMode", "setImageTintMode"+"con");*/
-
-        // TextView
-/*        mXmlAttrs.put("autoLink", mapAttrInfo(null, "setAutoLinkMask", null, "android.text.util.Linkify"); // it won't work because of different constants suffixes*/
-        mXmlAttrs.put("autoText", mapAttrInfo(helper, "setKeyListener")); // conflicts with capitalize.
-        mXmlAttrs.put("bufferType", mapAttrInfo(helper, "setBufferType"));
-        mXmlAttrs.put("capitalize", mapAttrInfo(helper, "setKeyListener")); // conflicts with autoText.
-        mXmlAttrs.put("digits", mapAttrInfo(helper, "setKeyListener"));
-        mXmlAttrs.put("drawableBottom", mapAttrInfo(helper, "setCompoundDrawable"));
-        mXmlAttrs.put("drawableEnd", mapAttrInfo(helper, "setCompoundDrawable"));
-        mXmlAttrs.put("drawableLeft", mapAttrInfo(helper, "setCompoundDrawable"));
-        mXmlAttrs.put("drawablePadding", mapAttrInfo(method, "setCompoundDrawablePadding", mod, DIMENSION));
-        mXmlAttrs.put("drawableStart", mapAttrInfo(helper, "setCompoundDrawable"));
-        mXmlAttrs.put("drawableRight", mapAttrInfo(helper, "setCompoundDrawable"));
-        //mXmlAttrs.put("drawableTint", mapAttrInfo("setTint", null, null, null));  // API 23
-/*        mXmlAttrs.put("drawableTintMode", mapAttrInfo("???", null, null, null); // maybe too complex to offer...*/
-        mXmlAttrs.put("drawableTop", mapAttrInfo(helper, "setCompoundDrawable"));
-        mXmlAttrs.put("ellipsize", mapAttrInfo(helper, "setEllipsize"));
-        mXmlAttrs.put("fontFamily", mapAttrInfo(helper, "setTypeface"));
-        mXmlAttrs.put("height", mapAttrInfo(mod, DIMENSION));
-        mXmlAttrs.put("imeActionId", mapAttrInfo(helper, "setImeAction"));
-        mXmlAttrs.put("imeActionLabel", mapAttrInfo(helper, "setImeAction"));
-        mXmlAttrs.put("imeOptions", mapAttrInfo(clazz, "android.view.inputmethod.EditorInfo", prefix, "ime_"));
-/*        mXmlAttrs.put("inputMethod", mapAttrInfo("setKeyListener", null, null, null));  // haven't figured out how this attr works...*/
-        mXmlAttrs.put("inputType", mapAttrInfo(clazz, "android.text.InputType"));    // Constants' values handled with mInputTypes list.
-        mXmlAttrs.put("lineSpacingExtra", mapAttrInfo(helper, "setLineSpacing"));
-        mXmlAttrs.put("lineSpacingMultiplier", mapAttrInfo(helper, "setLineSpacing"));
-        mXmlAttrs.put("maxLength", mapAttrInfo(helper, "setMaxLength"));
-        mXmlAttrs.put("scrollHorizontally", mapAttrInfo(method, "setHorizontallyScrolling"));
-        mXmlAttrs.put("shadowColor", mapAttrInfo(helper, "setShadowLayer"));
-        mXmlAttrs.put("shadowDx", mapAttrInfo(helper, "setShadowLayer"));
-        mXmlAttrs.put("shadowDy", mapAttrInfo(helper, "setShadowLayer"));
-        mXmlAttrs.put("shadowRadius", mapAttrInfo(helper, "setShadowLayer"));
-        mXmlAttrs.put("textAllCaps", mapAttrInfo(method, "setAllCaps"));
-        mXmlAttrs.put("textColor", mapAttrInfo(mod, COLOR));
-        mXmlAttrs.put("textColorHighlight", mapAttrInfo(method, "setHighlightColor", mod, COLOR));
-        mXmlAttrs.put("textColorHint", mapAttrInfo(method, "setHintTextColor", mod, COLOR));
-        mXmlAttrs.put("textColorLink", mapAttrInfo(method, "setLinkTextColor", mod, COLOR));
-        mXmlAttrs.put("textSize", mapAttrInfo(helper, "setTextSize"));
-        mXmlAttrs.put("textStyle", mapAttrInfo(helper, "setTextStyle"));
-        mXmlAttrs.put("typeface", mapAttrInfo(helper, "setTypeface"));
-        mXmlAttrs.put("width", mapAttrInfo(mod, DIMENSION));
-
-        // ViewGroup (Layout Params)
-        mXmlAttrs.put("layout_", mapAttrInfo(helper, "setLayoutProperty"));
-
-        // LinearLayout
-        mXmlAttrs.put("divider", mapAttrInfo(helper, "setDividerDrawable"));
-        mXmlAttrs.put("measureWithLargestChild", mapAttrInfo(method, "setMeasureWithLargestChildEnabled"));
-        mXmlAttrs.put("showDividers", mapAttrInfo(prefix, "show_divider_"));
-
-        // RelativeLayout
-        mXmlAttrs.put("ignoreGravity", mapAttrInfo(mod, VIEW_ID));
-
-        // TableLayout
-        mXmlAttrs.put("collapseColumns", mapAttrInfo(helper, "setTableColumns")); // works but a way to 'uncollapse' should be offered...
-        mXmlAttrs.put("shrinkColumns", mapAttrInfo(helper, "setTableColumns"));
-        mXmlAttrs.put("stretchColumns", mapAttrInfo(helper, "setTableColumns"));
-
-        // Various Classes
-        mXmlAttrs.put("gravity", mapAttrInfo(clazz, "android.view.Gravity"));
-    }
-
-    private static Map<AttributeInfo, String> mapAttrInfo(Object... attrInfo) {
-        Map<AttributeInfo, String> infoMap = new EnumMap<>(AttributeInfo.class);
-        for (int i = 0; i < attrInfo.length; i = i + 2) {
-            infoMap.put((AttributeInfo) attrInfo[i], (String) attrInfo[i + 1]);
-        }
-        return infoMap;
     }
 
     /**
@@ -1199,9 +1212,14 @@ public class ViewInflater {
                         }
                     } else if (layout instanceof RelativeLayout.LayoutParams) {
                         int anchor = calcId(value, false, false);
-                        if (anchor == 0) {
+
+                        if (anchor == 0 && root != null) {
+                            anchor = root.getId();
+                            mErrors.remove(mErrors.size() - 1);
+                        } else if (anchor == 0) {
                             anchor = getInteger(RelativeLayout.class, value);
                         }
+
                         int rule = mRelative.get(layoutAttr);
                         ((RelativeLayout.LayoutParams) layout).addRule(rule, anchor);
                     } else {
@@ -1545,7 +1563,7 @@ public class ViewInflater {
         public float getScaledSize(String value) {
             int i;
             float size;
-            String unit = "px";
+            String units = "px";
             for (i = 0; i < value.length(); i++) {
                 char c = value.charAt(i);
                 if (!(Character.isDigit(c) || c == '.')) {
@@ -1555,25 +1573,25 @@ public class ViewInflater {
             try {
                 size = Float.parseFloat(value.substring(0, i));
                 if (i < value.length()) {
-                    unit = value.substring(i).trim();
+                    units = value.substring(i).trim();
                 }
-                if (unit.equals("px")) {
+                if (units.equals("px")) {
                     return size;
                 }
-                if (unit.equals("sp")) {
+                if (units.equals("sp")) {
                     return mMetrics.scaledDensity * size;
                 }
-                if (unit.equals("dp") || unit.equals("dip")) {
+                if (units.equals("dp") || units.equals("dip")) {
                     return mMetrics.density * size;
                 }
                 float inches = mMetrics.ydpi * size;
-                if (unit.equals("in")) {
+                if (units.equals("in")) {
                     return inches;
                 }
-                if (unit.equals("pt")) {
+                if (units.equals("pt")) {
                     return inches / 72;
                 }
-                if (unit.equals("mm")) {
+                if (units.equals("mm")) {
                     return (float) (inches / 25.4);
                 }
             } catch (NumberFormatException e) {
@@ -1661,11 +1679,11 @@ public class ViewInflater {
                         result = f.getInt(null);
                     } catch (Exception ex1) {
                         try {
-                            f = clazz.getField(toUnderscore(value).toUpperCase());
+                            f = clazz.getField(toSnakeCase(value).toUpperCase());
                             result = f.getInt(null);
                         } catch (Exception ex2) {
                             try {
-                                f = clazz.getField(toUnderscore(attr + '_' + value).toUpperCase());
+                                f = clazz.getField(toSnakeCase(attr + '_' + value).toUpperCase());
                                 result = f.getInt(null);
                             } catch (Exception ex3) {
 /*                                if (!value.toLowerCase().endsWith("none")) {*/
