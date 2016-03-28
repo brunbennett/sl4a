@@ -1,0 +1,18 @@
+<html>
+<head>
+    <title>Toast Notifications</title>
+    <script>
+      var droid = new Android();
+      var toast = function() {
+        droid.makeToast(document.getElementById("notify").value);
+      }
+    </script>
+</head>
+<body>
+<form onsubmit="toast(); return false;">
+    <label for="notify">What would you like to notify?</label>
+    <input type="text" id="notify" />
+    <input type="submit" value="Toast" />
+</form>
+</body>
+</html>
